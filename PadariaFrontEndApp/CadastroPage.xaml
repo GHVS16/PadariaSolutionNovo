@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.CadastroPage"
+             Title="Cadastre-se">
+
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label Text="Criar Nova Conta"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Entry Placeholder="Nome Completo" />
+        <Entry Placeholder="Email" Keyboard="Email" />
+        <Entry Placeholder="Celular (Ex: (XX) XXXXX-XXXX)" Keyboard="Telephone" />
+        <Entry Placeholder="CPF (apenas números)" Keyboard="Numeric" />
+        <Entry Placeholder="Senha" IsPassword="True" />
+        <Entry Placeholder="Confirmar Senha" IsPassword="True" />
+
+        <Button Text="Cadastrar" x:Name="CadastrarBtn"
+            Clicked="OnCadastrarClicked" />
+
+
+        <Button Text="Voltar"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="OnVoltarClicked"
+                    Margin="0,20,0,0" />
+
+        <Label Text="Já tem uma conta? Entrar"
+               HorizontalOptions="Center"
+               TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLoginTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </VerticalStackLayout>
+
+</ContentPage>

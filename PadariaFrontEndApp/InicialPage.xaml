@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.InicialPage"
+             Title="Bem-vindo">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="#FFF5E1" >
+            <Image
+                Source="logo_padaria.jpg"  HeightRequest="185"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Escolha como deseja entrar no app:"
+                HorizontalOptions="Center"
+                FontSize="20"
+                FontAttributes="Bold" />
+
+            <Button
+                Text="Cliente"
+                BackgroundColor="#5A3E14"
+                TextColor="#FFFFFF"
+                x:Name="ClienteButton"
+                Clicked="OnClienteClicked" />
+
+            <Button
+                Text="Funcionário"
+                BackgroundColor="#5A3E14"
+                TextColor="#FFFFFF"
+                x:Name="FuncionarioButton"
+                Clicked="OnFuncionarioClicked" />
+
+            <Button
+                Text="Registrar-se"
+                BackgroundColor="#5A3E14"
+                TextColor="#FFFFFF"
+                x:Name="RegistrarButton"
+                Clicked="OnRegistrarClicked" />
+
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
