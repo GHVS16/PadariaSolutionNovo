@@ -10,6 +10,11 @@
         Route="InicialPage" />
 
     <ShellContent
+        Title="Login Funcionário"
+        ContentTemplate="{DataTemplate local:FuncionarioLoginPage}"
+        Route="FuncionarioLoginPage" />
+
+    <ShellContent
         Title="Login Cliente"
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" />

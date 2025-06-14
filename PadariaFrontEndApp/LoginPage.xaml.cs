@@ -1,4 +1,5 @@
-﻿namespace PadariaFrontEndApp;
+﻿using Microsoft.Maui.Controls;
+namespace PadariaFrontEndApp;
 
 public partial class LoginPage : ContentPage
 {

@@ -4,6 +4,13 @@
              x:Class="PadariaFrontEndApp.CadastroPage"
              Title="Cadastre-se">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+                     Clicked="OnBackButtonClicked"
+                     IconImageSource="back_arrow.png" />
+    </ContentPage.ToolbarItems>
+
+
     <VerticalStackLayout Spacing="20" Padding="20">
         <Label Text="Criar Nova Conta"
                FontSize="28"

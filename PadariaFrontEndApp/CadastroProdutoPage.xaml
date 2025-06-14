@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.CadastroProdutoPage"
+             Title="Cadastrar Produto"
+             BackgroundColor="#362E30">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+                     Clicked="OnBackButtonClicked"
+                     IconImageSource="back_arrow.png" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <Label Text="Novo Produto no Estoque"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,30"
+                   TextColor="White" />
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="NomeEntry"
+                       Placeholder="Nome do Produto (Ex: Pão Francês)"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Text"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="PrecoEntry"
+                       Placeholder="Preço (Ex: 1.50)"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Numeric"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="EstoqueEntry"
+                       Placeholder="Quantidade em Estoque (Ex: 30)"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Numeric"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="UnidadeMedidaEntry"
+                       Placeholder="Unidade de Medida (Ex: unidades, gramas)"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Text"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="DescricaoEntry"
+                       Placeholder="Descrição (Opcional)"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Text"
+                       Margin="15,0"
+                       HeightRequest="80"/>
+            </Frame>
+
+            <Button Text="Salvar Produto"
+                    BackgroundColor="#6A0DAD"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HeightRequest="55"
+                    Margin="0,40,0,0"
+                    Clicked="OnSalvarProdutoClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

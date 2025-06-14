@@ -1,3 +1,4 @@
+using Microsoft.Maui.Controls;
 namespace PadariaFrontEndApp;
 
 public partial class InicialPage : ContentPage
@@ -10,20 +11,20 @@ public partial class InicialPage : ContentPage
     private async void OnClienteClicked(object sender, EventArgs e)
     {
         // Navegar para a página de Login Cliente (que é sua MainPage atual)
-        await Shell.Current.GoToAsync("//LoginPage");
+        await Shell.Current.GoToAsync("ClienteLoginPage");
     }
 
     private async void OnFuncionarioClicked(object sender, EventArgs e)
     {
-        // Navegar para a página de Login Funcionário (você precisará criá-la)
-        await DisplayAlert("Acesso Funcionário", "Funcionalidade em desenvolvimento.", "OK");
-        // await Shell.Current.GoToAsync("//FuncionarioLoginPage"); // Descomente quando tiver a página
+        // Navegar para a página de Login Funcionário
+        await Shell.Current.GoToAsync("FuncionarioLoginPage");
+        
     }
 
     private async void OnRegistrarClicked(object sender, EventArgs e)
     {
         // Navegar para a página de Cadastro
-        await Shell.Current.GoToAsync("//CadastroPage");
+        await Shell.Current.GoToAsync("CadastroPage");
     }
 
    

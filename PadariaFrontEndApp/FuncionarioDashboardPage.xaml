@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.FuncionarioDashboardPage"
+             Title="Dashboard do Funcionário"
+             BackgroundColor="#362E30">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair"
+                     Clicked="OnSairClicked"
+                     IconImageSource="logout_icon.png" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20" Padding="30">
+        <Label Text="Bem-vindo(a) ao Dashboard do Funcionário!"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White"
+               Margin="0,0,0,20"/>
+
+        <Button Text="Cadastrar Novo Produto"
+                BackgroundColor="#6A0DAD"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                HeightRequest="55"
+                Clicked="OnCadastrarProdutoClicked" />
+
+        <Button Text="Ver Produtos em Estoque"
+                BackgroundColor="#6A0DAD"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                HeightRequest="55"
+                Clicked="OnVerProdutosClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

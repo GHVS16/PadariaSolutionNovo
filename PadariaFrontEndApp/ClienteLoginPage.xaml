@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.ClienteLoginPage"
+             Title="Login do Cliente"
+             BackgroundColor="#362E30">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+                     Clicked="OnBackButtonClicked"
+                     IconImageSource="back_arrow.png" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto"
+          ColumnDefinitions="*"
+          Padding="30">
+
+        <Label Text="Acesso do Cliente"
+               Grid.Row="0"
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               Margin="0,20,0,30" />
+
+        <VerticalStackLayout Grid.Row="1" Spacing="15">
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Email"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       Keyboard="Email"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="#4A4446" CornerRadius="10" Padding="0" HasShadow="False">
+                <Entry x:Name="SenhaEntry"
+                       Placeholder="Senha"
+                       PlaceholderColor="#B0B0B0"
+                       TextColor="White"
+                       IsPassword="True"
+                       Margin="15,0"
+                       HeightRequest="50"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <Button x:Name="LoginButton"
+                Grid.Row="3"
+                Text="Entrar"
+                BackgroundColor="#6A0DAD"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                HeightRequest="55"
+                Margin="0,40,0,0"
+                Clicked="OnLoginButtonClicked"/>
+
+        <Button Text="Não tem conta? Cadastre-se"
+                Grid.Row="4"
+                TextColor="#6A0DAD"
+                BackgroundColor="Transparent"
+                FontSize="14"
+                Margin="0,10,0,0"
+                Clicked="OnNavigateToCadastroClicked"/>
+
+    </Grid>
+</ContentPage>

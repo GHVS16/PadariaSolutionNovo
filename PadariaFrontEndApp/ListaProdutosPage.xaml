@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PadariaFrontEndApp.ListaProdutosPage"
+             Title="Produtos no Estoque"
+             BackgroundColor="#362E30">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+                     Clicked="OnBackButtonClicked"
+                     IconImageSource="back_arrow.png" />
+        <ToolbarItem Text="Atualizar"
+                     Clicked="OnAtualizarClicked"
+                     IconImageSource="refresh_icon.png" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout>
+        <Label Text="Lista de Produtos"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10"
+               TextColor="White" />
+
+        <ActivityIndicator x:Name="ActivityIndicator"
+                           IsRunning="False"
+                           HorizontalOptions="Center"
+                           Color="#6A0DAD" />
+
+        <CollectionView x:Name="ProdutosCollectionView"
+                        ItemsSource="{Binding Produtos}"
+                        Margin="10">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <Label Text="Nenhum produto encontrado. Cadastre um!"
+                           TextColor="White"
+                           FontSize="18"
+                           HorizontalOptions="Center" />
+                    <Button Text="Cadastrar Primeiro Produto"
+                            Clicked="OnCadastrarNovoProdutoClicked"
+                            BackgroundColor="#6A0DAD"
+                            TextColor="White"
+                            Margin="0,20,0,0"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#4A4446"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="0,0,0,10"
+                           HasShadow="False">
+                        <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto">
+                            <Label Text="{Binding Nome}"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   Grid.Column="0" Grid.Row="0" />
+                            <Label Text="{Binding Preco, StringFormat='Preço: R$ {0:F2}'}"
+                                   FontSize="16"
+                                   TextColor="LightGray"
+                                   Grid.Column="0" Grid.Row="1" />
+                            <Label Text="{Binding Estoque, StringFormat='Estoque: {0} {1}'}"
+                                   FontSize="16"
+                                   TextColor="LightGray"
+                                   Grid.Column="0" Grid.Row="2" />
+                            <Label Text="{Binding Descricao}"
+                                   FontSize="14"
+                                   TextColor="#B0B0B0"
+                                   Grid.Column="0" Grid.Row="3" />
+
+                            <Button Text="Editar"
+                                    Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"
+                                    BackgroundColor="#6A0DAD"
+                                    TextColor="White"
+                                    Margin="5,0,0,0"
+                                    VerticalOptions="Center"
+                                    Clicked="OnEditarProdutoClicked"
+                                    CommandParameter="{Binding .}"/>
+                            <Button Text="Excluir"
+                                    Grid.Column="2" Grid.Row="0" Grid.RowSpan="4"
+                                    BackgroundColor="#E74C3C" TextColor="White"
+                                    Margin="5,0,0,0"
+                                    VerticalOptions="Center"
+                                    Clicked="OnExcluirProdutoClicked"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
